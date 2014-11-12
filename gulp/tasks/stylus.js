@@ -1,11 +1,11 @@
-var gulp  = require('gulp'),
+var gulp = require('gulp'),
 	nib = require('nib'),
 	stylus = require('gulp-stylus'),
 	sourcemaps = require('gulp-sourcemaps');
 
 
 // Compile main.styl file
-gulp.task('main-css', function () {
+gulp.task('main-css', ['clean'], function () {
 	gulp.src('./app/styl/main.styl')
 		.pipe(stylus({
 			use: [nib()],
