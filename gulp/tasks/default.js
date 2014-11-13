@@ -1,3 +1,3 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['clean', 'copy', 'main-css', 'connect', 'watch']);
+gulp.task('default', ['clean', 'copy', 'markup', 'main-css', 'browserify', 'connect', 'watch']);
