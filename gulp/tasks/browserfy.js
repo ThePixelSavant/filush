@@ -7,10 +7,10 @@ var gulp = require('gulp'),
 // Browserfy JS packages
 // using vinyl-source-stream:
 gulp.task('browserify', ['clean'], function() {
-  var bundleStream = browserify('./src/index.js').bundle()
+  var bundleStream = browserify('./app/js/app.js').bundle()
 
   bundleStream
     .pipe(source('main.js'))
-    .pipe(streamify(uglify()))
+    //.pipe(streamify(uglify()))
     .pipe(gulp.dest('./.tmp/js'))
 });
