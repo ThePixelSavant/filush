@@ -4,8 +4,13 @@ reset-html5()
 @import url('http://fonts.googleapis.com/css?family=Open\+Sans')
 
 body
-  font-family 'Open Sans', sans-serif
-  font-size 14px
+	font-family 'Open Sans', sans-serif
+	font-size 14px
+	background-color color-primary-0
+
+for i in 0..4
+	.primary-{i}
+		background-color lookup('color-primary-' + i)
 
 h1
-    font-size 3em
+	font-size 3em

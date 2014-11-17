@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 // Copy images and site root files
-gulp.task('copy', ['clean'], function () {
+gulp.task('base', function () {
 	gulp.src([
 		'./app/img/**',
 		'./app/.htaccess',
