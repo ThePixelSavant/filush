@@ -41,8 +41,10 @@
   "devDependencies": {
     "browserify-shim": "^3.8.0",
     "gulp-beautify": "^1.1.1",
+    "gulp-compile-handlebars": "^0.4.3",
     "gulp-handlebars": "^3.0.1",
     "gulp-imagemin": "^2.0.0",
+    "gulp-rename": "^1.2.0",
     "require-dir": "^0.1.0"
   }
 }
