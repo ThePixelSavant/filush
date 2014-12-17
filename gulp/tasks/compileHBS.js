@@ -1,12 +1,13 @@
-var gulp = require('gulp');
-var handlebars = require('gulp-compile-handlebars');
-var rename = require('gulp-rename');
+var gulp = require('gulp'),
+		handlebars = require('gulp-compile-handlebars'),
+		stylus = require('gulp-stylus'),
+		rename = require('gulp-rename'),
+		data = require('gulp-data');
 
 gulp.task('compileHBS', function () {
     var templateData = {
         title: 'FJS Sample',
-				description: 'Here is a sample description',
-				loadStyles: 'h1 {text-align:center;}'
+				description: 'Here is a sample description'
     },
     options = {
         ignorePartials: false, //ignores the unknown footer2 partial in the handlebars template, defaults to false
@@ -15,9 +16,14 @@ gulp.task('compileHBS', function () {
         },
         batch : ['./app/layout/partials'],
         helpers : {
-            capitals : function(str){
-                return str.toUpperCase();
-            }
+					year : function(){
+							return new Date().getFullYear();
+					},
+					loadStyles: function(){
+							return gulp.src('./app/styl/partials/_preload-styles.styl')
+								.pipe(stylus())
+								.pipe(gulp.dest(target));
+					}
         }
     }
 
