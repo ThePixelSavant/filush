@@ -22,5 +22,5 @@ gulp.task('stylus', function () {
 			includeConent: false,
 			sourceRoot: '.'
 		}))
-		.pipe(gulp.dest('./.tmp/css'));
+		.pipe(gulp.dest('./dist/css'));
 });

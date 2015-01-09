@@ -1,2 +1,2 @@
 var $ = require('jquery'),
-	roughdraft = require('roughdraft');
+		roughdraft = require('roughdraft');

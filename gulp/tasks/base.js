@@ -11,5 +11,5 @@ gulp.task('base', function () {
   	], {
 		base: './app/'
 	})
-		.pipe(gulp.dest('./.tmp'));
+		.pipe(gulp.dest('./dist'));
 });

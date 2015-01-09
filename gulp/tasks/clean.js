@@ -3,5 +3,5 @@ var gulp = require('gulp'),
 
 gulp.task('clean', function (cb) {
 	//  del(['**'], {cwd: 'app'}, cb)
-	del(['./.tmp/**'], cb)
+	del(['./.tmp/**','./dist/**'], cb)
 })

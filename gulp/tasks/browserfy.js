@@ -8,11 +8,11 @@ var gulp = require('gulp'),
 // Browserfy JS packages
 // using vinyl-source-stream:
 gulp.task('browserify', function() {
-  var bundleStream = browserify('./app/js/app.js').bundle()
+  var bundleStream = browserify('./app/js/app.js').bundle();
 
   bundleStream
-    .pipe(source('main.js'))
-    //.pipe(streamify(uglify()))
-  	.pipe(streamify(beautify()))
-    .pipe(gulp.dest('./.tmp/js'))
+		.pipe(source('main.js'))
+		//.pipe(streamify(uglify()))
+		.pipe(streamify(beautify()))
+		.pipe(gulp.dest('./dist/js'));
 });
