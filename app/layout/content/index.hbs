@@ -6,23 +6,9 @@
 <html class="no-js">
 <!--<![endif]-->
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{{title}}</title>
-	<meta name="description" content="{{description}}">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!--  Preloading Styles -->
-	<style>
-		{{loadStyles}}
-	</style>
-
-	<!--  Main Styles -->
-	<link rel="stylesheet" href="css/main.css">
-	<!--  Modernizr -->
-	<script src="js/modernizr.js"></script>
-</head>
+{{#parseJSON '{"styleSheets": [["main"],["style-guide"]] }'}}
+    {{> htmlHeader}}
+{{/parseJSON}}
 
 <body>
 

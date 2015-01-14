@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
-		handlebars = require('gulp-compile-handlebars'),
-		stylus = require('gulp-stylus'),
-		rename = require('gulp-rename'),
-		gutil = require('gulp-util');
+	handlebars = require('gulp-compile-handlebars'),
+	stylus = require('gulp-stylus'),
+	rename = require('gulp-rename'),
+	gutil = require('gulp-util');
 
 gulp.task('compileHBS', function () {
 	var templateData = {
@@ -18,6 +18,9 @@ gulp.task('compileHBS', function () {
 		helpers : {
 			year : function(){
 				return new Date().getFullYear();
+			},
+			parseJSON : function(data, options) {
+				return options.fn(JSON.parse(data));
 			}
 		}
 	}
