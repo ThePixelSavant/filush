@@ -1,0 +1,22 @@
+{
+	config: {
+
+	},
+	pages: {
+		index:{
+			styleSheets:{[
+				'main'
+			]},
+			pageTitle: 'Main Page',
+			pageDescription: 'This is the page description.'
+		},
+		styleGuide:{
+			styleSheets:{[
+				'main',
+				'style-guide'
+			]},
+			pageTitle: 'Style Guide',
+			pageDescription: 'This is the style guide description.'
+		}
+	}
+}
