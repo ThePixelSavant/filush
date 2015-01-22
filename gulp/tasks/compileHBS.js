@@ -1,36 +1,18 @@
 var gulp = require('gulp'),
 	handlebars = require('gulp-compile-handlebars'),
 	stylus = require('gulp-stylus'),
-	data = require('gulp-data'),
+	fs = require('fs'),
+	path = require('path'),
 	rename = require('gulp-rename'),
+	tap = require('gulp-tap'),
 	gutil = require('gulp-util');
 
-var getAppData = function(file) {
-  return require('./app/appData.json');
+var getAppData = function () {
+  return JSON.parse(fs.readFileSync('./app/appData.json', 'utf8'));
 };
 
 gulp.task('compileHBS', function () {
-	var templateData = {
-		"app":{
-			"pages":{
-				"index":{
-					"styleSheets":[
-						"main"
-					],
-					"pageTitle":"Main Page",
-					"pageDescription":"This is the page description."
-				},
-				"styleGuide":{
-					"styleSheets":[
-						"main",
-						"style-guide"
-					],
-					"pageTitle":"Style Guide",
-					"pageDescription":"This is the style guide description."
-				}
-			}
-		}
-	},
+	var templateData = getAppData(),
 	options = {
 		ignorePartials: false, //ignores the unknown footer2 partial in the handlebars template, defaults to false
 		partials : {
@@ -48,6 +30,12 @@ gulp.task('compileHBS', function () {
 	}
 	
 		return gulp.src('./app/layout/content/*.hbs')
+		.pipe(tap(function (file,t) {
+				//console.log(path.basename(file.path, '.hbs'));
+				templateData.currentPage = path.basename(file.path, '.hbs');
+				templateData.currentPage.styleSheets = ''
+				//console.log(templateData.currentPage);
+			}))
 		.pipe(handlebars(templateData, options))
 		.pipe(rename(
 			function(path) {

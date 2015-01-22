@@ -9,13 +9,9 @@
 	<style>
 		{{loadingStyles}}
 	</style>
-	
-	{{#each app.pages.styleGuide.styleSheets }}
-		{{lookup @index}}
-	{{/each}}
 
 	<!--  Main Styles -->
-	{{#each css}}
+	{{#each currentPage.styleSheets}}
 		<link href="css/{{this}}.css" media="all" rel="stylesheet" type="text/css">
 	{{/each}}
 	
