@@ -1,20 +1,28 @@
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{{title}}</title>
-	<meta name="description" content="{{description}}">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{{currentTitle}} | {{app.settings.appName}}</title>
+		<meta name="description" content="{{currentDescription}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!--  Preloading Styles -->
-	<style>
-		{{loadingStyles}}
-	</style>
+		<!--  Preloading Styles -->
+		<style>
+			{{loadingStyles}}
+		</style>
 
-	<!--  Main Styles -->
-	{{#each currentPage.styleSheets}}
-		<link href="css/{{this}}.css" media="all" rel="stylesheet" type="text/css">
-	{{/each}}
-	
-	<!--  Modernizr -->
-	<script src="js/modernizr.js"></script>
-</head>
+		<!--  Main Styles -->
+		{{#each currentStyleSheets}}
+			<link href="css/{{this}}.css" media="all" rel="stylesheet" type="text/css">
+		{{/each}}
+
+		<!--  Modernizr -->
+		<script src="js/modernizr.js"></script>
+	</head>
+<body>

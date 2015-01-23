@@ -6,7 +6,11 @@ var gulp = require('gulp'),
 
 // Compile main.styl file
 gulp.task('stylus', function () {
-	gulp.src(['./app/styl/main.styl','./app/styl/style-guide.styl'])
+	gulp.src([
+			'./app/styl/main.styl',
+			'./app/styl/404.styl',
+			'./app/styl/style-guide.styl'
+		])
 		.pipe(stylus({
 			use: [nib()],
 			import: ['nib'],

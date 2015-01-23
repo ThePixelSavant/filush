@@ -1,20 +1,31 @@
 {
 	"app":{
+		"settings":{
+			"appName":"My App Name"
+		},
 		"pages":{
 			"index":{
 				"styleSheets":[
 					"main"
 				],
-				"pageTitle":"Main Page",
-				"pageDescription":"This is the page description."
+				"title":"Main Page",
+				"description":"This is the page description."
 			},
 			"styleGuide":{
 				"styleSheets":[
 					"main",
 					"style-guide"
 				],
-				"pageTitle":"Style Guide",
-				"pageDescription":"This is the style guide description."
+				"title":"Style Guide",
+				"description":"This is the style guide description."
+			},
+			"404":{
+				"styleSheets":[
+					"main",
+					"404"
+				],
+				"title":"404 Page Not Found",
+				"description":"This is the 404 page."
 			}
 		}
 	}
