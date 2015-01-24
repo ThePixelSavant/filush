@@ -34,8 +34,8 @@ gulp.task('compileHBS', function () {
 						import: ['nib']
 					}))
 				.pipe(tap(function (file,t) {
-					console.log(file.contents);
-					return file.contents
+					console.log(file.toString('utf8'));
+					//return file.toString();
 				}));
 			}
 		}
