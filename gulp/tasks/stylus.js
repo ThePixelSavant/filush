@@ -12,6 +12,7 @@ gulp.task('stylus', function () {
 			'./app/styl/style-guide.styl'
 		])
 		.pipe(stylus({
+			'include css': true,
 			use: [nib()],
 			import: ['nib'],
 			sourcemap: {

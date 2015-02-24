@@ -27,7 +27,7 @@ gulp.task('compileHBS', function () {
 			parseJSON : function(data, options) {
 				return options.fn(JSON.parse(data));
 			},
-			loadingStyles : function(){
+			/*loadingStyles : function(){
 				gulp.src('./app/styl/preload-styles.styl')
 				.pipe(stylus({
 						use: [nib()],
@@ -37,7 +37,7 @@ gulp.task('compileHBS', function () {
 					console.log(file.toString('utf8'));
 					//return file.toString();
 				}));
-			}
+			}*/
 		}
 	}
 	
