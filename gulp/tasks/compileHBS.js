@@ -26,17 +26,19 @@ gulp.task('compileHBS', function () {
 			},
 			parseJSON : function(data, options) {
 				return options.fn(JSON.parse(data));
-			},
+			}
+
 			/*loadingStyles : function(){
-				gulp.src('./app/styl/preload-styles.styl')
-				.pipe(stylus({
-						use: [nib()],
-						import: ['nib']
-					}))
-				.pipe(tap(function (file,t) {
-					console.log(file.toString('utf8'));
-					//return file.toString();
-				}));
+				return gulp.src('./app/styl/preload-styles.styl')
+					.pipe(stylus({
+							use: [nib()],
+							import: ['nib']
+						}))
+					.pipe(tap(function (file,t) {
+						return file.contents;
+						//console.log(loadStyle);
+						//JSON.stringify(file.contents.toString('utf-8'));
+					}));
 			}*/
 		}
 	}

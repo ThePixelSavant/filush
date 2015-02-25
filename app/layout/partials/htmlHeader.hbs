@@ -14,7 +14,12 @@
 
 		<!--  Preloading Styles -->
 		<style>
+			{{{loadingStyles}}}
 			{{loadingStyles}}
+			
+			{{#each loadingStyles}}
+				Key: {{@key}} Value = {{this}}
+			{{/each}}
 		</style>
 
 		<!--  Main Styles -->

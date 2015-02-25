@@ -1,5 +1,4 @@
-var gulp = require('gulp'),
-		modernizr = require('gulp-modernizr');
+var gulp = require('gulp');
 
 gulp.task('modernizr', function() {
   gulp.src([
